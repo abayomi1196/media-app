@@ -1,6 +1,6 @@
-import Post from "./models/Post.js";
+import Post from "../../models/Post.js";
 
-export const resolvers = {
+export default {
   Query: {
     async getPosts() {
       try {

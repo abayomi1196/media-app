@@ -2,8 +2,8 @@ import { ApolloServer } from "apollo-server";
 import mongoose from "mongoose";
 
 import { MONGODB } from "./config.js";
-import { typeDefs } from "./types.js";
-import { resolvers } from "./resolvers.js";
+import { typeDefs } from "./graphql/types.js";
+import resolvers from "./graphql/resolvers/index.js";
 
 // instantiate server instance
 const server = new ApolloServer({
