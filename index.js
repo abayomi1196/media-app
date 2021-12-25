@@ -9,6 +9,7 @@ import resolvers from "./graphql/resolvers/index.js";
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  context: ({ req }) => ({ req }),
 });
 
 // connect to db using mongoose and then launch server
