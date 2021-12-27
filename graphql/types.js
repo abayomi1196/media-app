@@ -1,11 +1,26 @@
 import { gql } from "apollo-server";
 
 export const typeDefs = gql`
+  type Comment {
+    id: ID!
+    createdAt: String!
+    username: String!
+    body: String!
+  }
+
+  type Like {
+    id: ID!
+    createdAt: String!
+    username: String!
+  }
+
   type SinglePost {
     id: ID!
     body: String!
     username: String!
     createdAt: String!
+    comments: [Comment]!
+    likes: [Like]!
   }
 
   type User {
@@ -33,5 +48,8 @@ export const typeDefs = gql`
     login(username: String!, password: String!): User!
     createPost(body: String!): SinglePost!
     deletePost(postId: ID!): String!
+    createComment(postId: ID!, body: String!): SinglePost!
+    deleteComment(postId: ID!, commentId: ID!): SinglePost!
+    likePost(postId: ID!): SinglePost!
   }
 `;
