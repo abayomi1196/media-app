@@ -1,7 +1,6 @@
 import { ApolloServer } from "apollo-server";
 import mongoose from "mongoose";
 
-import { MONGODB } from "./config.js";
 import { typeDefs } from "./graphql/types.js";
 import resolvers from "./graphql/resolvers/index.js";
 
@@ -18,6 +17,7 @@ const server = new ApolloServer({
 mongoose
   .connect(MONGODB, {
     useNewUrlParser: true,
+    useUnifiedTopology: true,
   })
   .then(() => {
     console.log("MongoDB connected");
