@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import { UserInputError } from "apollo-server";
 
 import User from "../../models/User.js";
-// import { SECRET_KEY } from "../../config.js";
+
 import {
   validateRegisterInput,
   validateLoginInput,
@@ -16,7 +16,7 @@ function generateToken(user) {
       email: user.email,
       username: user.username,
     },
-    SECRET_KEY,
+    process.env.SECRET_KEY,
     { expiresIn: "1h" }
   );
 }
