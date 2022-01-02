@@ -16,7 +16,7 @@ const server = new ApolloServer({
 
 // connect to db using mongoose and then launch server
 mongoose
-  .connect(MONGODB, {
+  .connect(process.env.MONGODB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
