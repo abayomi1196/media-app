@@ -1,7 +1,7 @@
 import { ApolloServer } from "apollo-server";
 import mongoose from "mongoose";
 
-// import { MONGODB } from "./config.js";
+import { MONGODB } from "./config.js";
 import { typeDefs } from "./graphql/types.js";
 import resolvers from "./graphql/resolvers/index.js";
 

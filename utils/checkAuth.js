@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import { AuthenticationError } from "apollo-server";
 
-// import { SECRET_KEY } from "../config.js";
+import { SECRET_KEY } from "../config.js";
 
 export default function (context) {
   // context = {..., req: {headers}}
